@@ -8,8 +8,10 @@
 using namespace std;
 
 struct PhoneBook {
+private:
     map<string, Person> phoneBook;
 
+public:
     PhoneBook() {}
     PhoneBook(map<string, Person> phoneBook) {
         this->phoneBook = phoneBook;
@@ -18,8 +20,15 @@ struct PhoneBook {
     void Add(string tel, Person person) {
         phoneBook.insert(pair<string, Person>(tel, person));
     }
-    Person SearchPerson(string tel) {
-        return phoneBook[tel];
+
+    bool SearchPerson(string tel, Person& person) {
+        try {
+            person = phoneBook.at(tel);
+            return true;
+        }
+        catch (out_of_range) {
+            return false;
+        }
     }
 };
 
