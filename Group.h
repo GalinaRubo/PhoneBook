@@ -1,11 +1,16 @@
 #ifndef PHONEBOOK_GROUP_H
 #define PHONEBOOK_GROUP_H
 
+#include <string>
+#include "IToString.h"
+
+using namespace std;
+
 enum EGroup {
     Friends, Family, Other
 };
 
-struct Group {
+struct Group : public IToString {
     EGroup name;
 
     Group() {}
@@ -14,7 +19,7 @@ struct Group {
         name = group;
     }
 
-    string ToString()
+    string ToString() override
     {
         switch (name) {
             case Friends:
