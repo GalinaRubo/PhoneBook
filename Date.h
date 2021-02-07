@@ -2,10 +2,11 @@
 #define PHONEBOOK_DATE_H
 
 #include <string>
+#include "IToString.h"
 
 using namespace std;
 
-struct Date {
+struct Date : public IToString {
 private:
     int year;
     int month;
@@ -66,7 +67,7 @@ public:
         SetDate(year, month, day);
     }
 
-    string ToString()
+    string ToString() override
     {
         string temp = to_string(day) + "." + to_string(month) + "." + to_string(year);
         return temp;
