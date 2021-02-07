@@ -6,17 +6,16 @@
 
 #include "Date.h"
 #include "Group.h"
+#include "Human.h"
+#include "IToString.h"
 
 using namespace std;
 
-struct Person {
-    string firstName;
-    string lastName;
-    Date dateOfBirth;
+struct Person : public Human, IToString {
     vector<string> emails;
     vector<Group> groups;
 
-    string ToString()
+    string ToString() override
     {
         string str;
         str = firstName + " " + lastName + " " + dateOfBirth.ToString() + " ";
