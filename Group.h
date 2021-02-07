@@ -14,7 +14,7 @@ struct Group {
         name = group;
     }
 
-    string toString()
+    string ToString()
     {
         switch (name) {
             case Friends:

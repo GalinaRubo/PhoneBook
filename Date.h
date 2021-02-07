@@ -18,7 +18,7 @@ struct Date {
         this->day = day;
     }
 
-    string toString()
+    string ToString()
     {
         string temp = to_string(day) + "." + to_string(month) + "." + to_string(year);
         return temp;
