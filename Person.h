@@ -3,7 +3,9 @@
 
 #include <string>
 #include <vector>
+
 #include "Date.h"
+#include "Group.h"
 
 using namespace std;
 
