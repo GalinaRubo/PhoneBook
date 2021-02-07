@@ -6,13 +6,11 @@
 
 #include "Date.h"
 #include "Group.h"
+#include "Human.h"
 
 using namespace std;
 
-struct Person {
-    string firstName;
-    string lastName;
-    Date dateOfBirth;
+struct Person : public Human {
     vector<string> emails;
     vector<Group> groups;
 
